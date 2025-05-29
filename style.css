@@ -13,6 +13,7 @@ header {
     justify-content: center;
     position: fixed;
     top: 0;
+    background: linear-gradient(rgba(244, 165, 96, 0.338),rgba(244, 165, 96, 0));
 
     nav {
         height: 10em;
@@ -34,6 +35,7 @@ header {
             text-decoration: none;
             color: whitesmoke;
             text-shadow: 0 0 20px #00ade2;
+            cursor: pointer;
 
         }
 
@@ -70,6 +72,7 @@ header {
             display: block;
             margin: 10px 1.5em;
             color: #00ade2;
+            cursor: pointer;
         }
     }
 }
@@ -98,6 +101,7 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 5em;
 
     .hero {
         height: 39.5em;
@@ -125,14 +129,10 @@ main {
     }
 }
 
-.txtColor{
-    color: orange;
-}
-
 .first-section {
     height: fit-content;
     width: 100%;
-    margin-top: 2em;
+    margin-top: 8em;
     /* background-color: aquamarine; */
     justify-content: center;
     gap: 1em;
@@ -179,7 +179,7 @@ main {
 .second-section {
     height: fit-content;
     width: 100%;
-    margin-top: 4em;
+    margin-top: 8em;
     /* background-color: lightgreen; */
     display: flex;
     flex-wrap: wrap;
@@ -254,7 +254,7 @@ main {
 
 .blue {
     height: fit-content;
-    margin-top: 4em;
+    margin-top: 7em;
     width: 100%;
     background-color: #00ade2;
     display: flex;
@@ -300,7 +300,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 5em;
 
     .valueimage {
         height: 15em;
@@ -351,12 +351,12 @@ main {
     text-align: center;
     color: #00ade2;
     font-size: 1.8em;
-    margin: 2em 0 1em;
+    margin: 5em 0 1em;
 }
 
 .means-boxes {
     height: fit-content;
-    margin-top: 2em;
+    margin-top: 5em;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -389,7 +389,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 5em;
 
     div {
         width: 20%;
@@ -443,7 +443,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 3em 0 5em;
+    margin: 5em 0 5em;
 
     div {
         height: 5em;
