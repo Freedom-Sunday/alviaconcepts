@@ -4,475 +4,616 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALVIA</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./ext files/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="./mobile.css">
-    <link rel="stylesheet" href="./tabs.css">
-    <link rel="stylesheet" href="./style.css">
+    <title>ALVIA | Business Consulting Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Scroll padding to account for fixed header */
+        html {
+            scroll-padding-top: 80px;
+        }
+        
+        /* Custom CSS for elements that need more precise styling */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <header id="home">
-        <nav>
-            <a href="" class="logo">ALVIA.</a>
-
-            <i class="fa-solid fa-bars fa-2xl" id="expand" style="color: #ffffff;"></i>
-            <i class="fa-solid fa-xmark fa-2xl" id="collapse" style="color: #ffffff;"></i>
-
-        </nav>
-    </header>
-
-
-    <div class="links-con">
-        <ul class="links">
-            <li id="homebtn"><a>Home</a></li>
-            <li id="aboutbtn"><a>About</a></li>
-            <li id="partnerbtn"><a>Partners</a></li>
-            <li id="addressbtn"><a>Contact</a></li>
-        </ul>
-    </div>
-
-    <main class="main">
-        <section class="hero">
-            <div class="hero-texts">
-
-                <h1 class="mainheading">POWERING THE FUTURE</h1>
-            </div>
-        </section>
-    </main>
-
-    <section class="first-section" id="about-container">
-        <div class="about-img"></div>
-        <div class="about-txt">
-            <h2 class="about">About ALVIA</h2>
-
-            <p> ALVIA Resource is an independent business consulting firm in Nigerian and roots across
-                the region. The company operates in 4 core business units: Business Management,
-                Project Management and Trainings, Business re-egineering and Software
-                Developmet and Deployment. <br>
-                Our Business Management solutions are supported by our deep insight into various
-                industries and our diversified yet extensive experience acquired over the years from
-                supporting our clients as partners in their business transformations. <br>
-                Our project management solutions provides a variety of program management services
-                and courses, including managing, planning, tracking or supporting projects within the IT,
-                Construction, oil and gas, hospitality ecosystem, amongst others. <br>
-                Our bespoke trainings deliver deep expertise, objective insights, a tailored approach and
-                unparalleled ideations from thought leaders to engender leadership in all industry
-                spheres. <br>
-                We have provided excellent end-to-end services in process re-engineering, solution
-                evaluation and selection, project management, configuration, data integrity services. Our
-                offerings also cover change management, training and post-implementation support is a
-                core competence of Alvia, and we provide hands-on support that directly impacts clients
-                businesses to achieve operational efficiency, competitiveness and growth
-            </p>
-
-            <span>Incorporated in 2012, ALVIA has worked with small,growing and established
-                companies to deliver immediate transformational impact and growing
-                advantage to our clients and people.
-            </span>
-        </div>
-    </section>
-
-    <section class="second-section">
-        <div class="child-one">
-            <div>
-                <h4>We Envision</h4>
-                <p>Thriving organisations driven by
-                    exceptional and transformational
-                    results across African markets
-                </p>
-            </div>
-
-            <div>
-                <h4>We Value</h4>
-                <p>
-                    Partnerships <br>
-                    Innovations<br>
-                    Continous Improvement<br>
-                    Integrity<br>
-                    Quality
-                </p>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fa-solid fa-chart-simple text-2xl font-bold text-blue-600"> </i> <span class="text-2xl font-bold text-blue-600 ms-2">ALVIA</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home"
+                            class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+                        <a href="#services"
+                            class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Services</a>
+                        <a href="#about"
+                            class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">About</a>
+                        <a href="#testimonials"
+                            class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Testimonials</a>
+                        <a href="#contact"
+                            class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Contact</a>
+                        <!-- <a href="#contact"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">Get
+                            Started</a> -->
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-
-        <div class="child-two"></div>
-
-        <div class="child-three">
-            <div>
-                <h4>We Aspire</h4>
-
-                <p>
-                    To be the best in consistently
-                    providing strategic business and
-                    consulting solutions, with a
-                    measurable impact on our clients
-                    businesses
-                </p>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="#services"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Services</a>
+                <a href="#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="#testimonials"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Testimonials</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+                <!-- <a href="#contact"
+                    class="block w-full text-center bg-blue-600 text-white px-3 py-2 rounded-md font-medium mt-2">Get
+                    Started</a> -->
             </div>
+        </div>
+    </nav>
 
-            <div>
-                <h4>We Consult</h4>
-
-                <p>
-                    Oil and Gas Solutions | Financial Services
-                    Management | Project Management |
-                    Business Re-engineering | Software
-                    testing and applications | Training and
-                    Knowledge Transfer
-                </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Transform Your Business
+                        With <span class="text-blue-200">ALVIA</span></h1>
+                    <p class="text-xl md:text-2xl text-blue-100 mb-8">Strategic consulting solutions to help your
+                        business grow and thrive in today's competitive landscape.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact"
+                            class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-md font-bold text-lg text-center transition duration-300">Get
+                            Started</a>
+                        <a href="#services"
+                            class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-md font-bold text-lg text-center transition duration-300">Our
+                            Services</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Business Consulting" class="rounded-lg shadow-2xl animate-float max-w-md w-full">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="blue">
-
-        <div class="blue1">
-            <img src="./media/alvia-target-screenshot.png" alt="">
-
-            <h4>Vision</h4>
-
-            <p> Our success is your success! As top--tier provider of business solutions, we foresee steering businesses
-                through the next stage of evolution, as the systems
-                upon which global businesses and societies are
-                disrupted and evolve.
-            </p>
-        </div>
-
-        <div class="blue2">
-            <img src="./media/alvia-search-screenshot.png" alt="">
-
-            <h4>Mission</h4>
-
-            <p> ALVIA Resource's mission is to be a catalyst for
-                accelerated access to innovative and disruptive
-                strategies that transforms businesses.
-            </p>
-        </div>
-
-    </section>
-
-    <section class="corevalues">
-        <div class="valueimage"></div>
-
-        <div class="valuetext">
-            <h2>Core Values</h2>
-
-            <ul>
-                <li>
-                    <span>Partnership:</span> Building Amazing Relationships With Our Stakeholders.
-                </li>
-
-                <li>
-                    <span>Innovation:</span> We know that advancement cannot come without change which is why we
-                    are constantly seeking ways to revolutionise the industries we take part in.
-                </li>
-
-                <li>
-                    <span>Continuous Improvement:</span> Open Minded, Unsettled with Today's Successes. Challenge The
-                    Status Quo.
-                    Integrity: Honest and Ready To Protect Your Interest, Whatever The Odds.
-                </li>
-
-                <li>
-                    <span>Integrity:</span> Honest and Ready To Protect Your Interest, Whatever The Odds.
-                </li>
-
-                <li>
-                    <span>Quality:</span> Alvia resource guarantees superior results. Our team is comprised of seasoned
-                    professionals who are equipped with years of experience and knowledge regarding industry
-                    trends, deep expertise and forward thinking.
-                </li>
-
-            </ul>
+    <!-- Stats Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">15+</div>
+                    <div class="text-xl font-medium text-gray-700">Years Experience</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">200+</div>
+                    <div class="text-xl font-medium text-gray-700">Satisfied Clients</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">95%</div>
+                    <div class="text-xl font-medium text-gray-700">Success Rate</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <h2 class="meanstoclient">What this Means to Clients</h2>
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Consulting Services</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We offer comprehensive business consulting services
+                    tailored to your unique needs and challenges.</p>
+            </div>
 
-    <section class="means-boxes">
-        <div>
-            <img src="./media/alvia-address-screenshot.png" alt="">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-blue-200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Strategic Planning</h3>
+                    <p class="text-gray-600 mb-6">Develop long-term strategies to position your business for sustainable
+                        growth and competitive advantage.</p>
+                    <!-- <a href="#" class="text-blue-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a> -->
+                </div>
 
-            <p> We work within budgets to get results</p>
-        </div>
+                <!-- Service 2 -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-blue-200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-bullseye text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Market Analysis</h3>
+                    <p class="text-gray-600 mb-6">Gain deep insights into your market, competitors, and customers to
+                        make informed business decisions.</p>
+                    <!-- <a href="#" class="text-blue-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a> -->
+                </div>
 
-        <div>
-            <img src="./media/alvia-handshake-screenshot.png" alt="">
+                <!-- Service 3 -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-blue-200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-cogs text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Operational Efficiency</h3>
+                    <p class="text-gray-600 mb-6">Optimize your business processes to reduce costs, improve quality, and
+                        enhance productivity.</p>
+                    <!-- <a href="#" class="text-blue-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a> -->
+                </div>
 
-            <p> We offer tailored insights that increase client's exposure and market share.</p>
-        </div>
+                <!-- Service 4 -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-blue-200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-users text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Organizational Development</h3>
+                    <p class="text-gray-600 mb-6">Build high-performing teams and develop leadership capabilities to
+                        drive business success.</p>
+                    <!-- <a href="#" class="text-blue-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a> -->
+                </div>
 
-        <div>
-            <img src="./media/alvia-industry-screenshot.png" alt="">
+                <!-- Service 5 -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-blue-200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-lightbulb text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Innovation Consulting</h3>
+                    <p class="text-gray-600 mb-6">Foster innovation and creativity to develop new products, services,
+                        and business models.</p>
+                    <!-- <a href="#" class="text-blue-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a> -->
+                </div>
 
-            <p> A unique consumer oriented experience and solution.</p>
-        </div>
-
-        <div>
-            <img src="./media/alvia-green-money-screenshot.png" alt="">
-
-            <p> Improved patronage of client's value proposition to its target audience.</p>
-        </div>
-
-        <div>
-            <img src="./media/alvia-cloud-screenshot.png" alt="">
-
-            <p> Measureable, sustainable and effective stakeholder engagement.
-
-            </p>
-        </div>
-
-    </section>
-
-    <h2 class="facts">Facts</h2>
-
-    <section class="facts-con">
-        <div class="one">
-            <img src="./media/alvia-12-screenshot.png" alt="">
-            <h2>12<span>+</span></h2>
-            <p>Years of Experience</p>
-        </div>
-
-        <div class="two">
-            <img src="./media/alvia-20-screenshot.png" alt="">
-            <h2>20<span>+</span></h2>
-            <p>Business Experts</p>
-        </div>
-
-        <div class="three">
-            <img src="./media/alvia-23-screenshot.png" alt="">
-            <h2>23<span></span></h2>
-            <p>Satisfied Clients</p>
-        </div>
-
-        <div class="four">
-            <img src="./media/alvia-40-screenshot.png" alt="">
-            <h2>40<span>+</span></h2>
-            <p>Successful Projects</p>
-        </div>
-    </section>
-
-    <h2 class="footprints" id="partners">Client Footprints</h2>
-
-    <section class="footprints-con">
-        <div class="one"></div>
-        <div class="two"></div>
-        <div class="three"></div>
-        <div class="four"></div>
-    </section>
-
-    <h2 class="c-studiesHeading">Case Studies</h2>
-
-    <section class="casestudies-con">
-        <div>
-            <h2>BRUS Otus</h2>
-
-            <p><span>Context : </span>BRUS Otus is a civil mechanical engineering company involved in the construction
-                of natural gas plants across Nigeria</p>
-
-            <p><span>Brief : </span>Develop a gas distribution business plan for the distribution of natural gas within
-                a network ofcommunities.</p>
-
-            <p><span>Solutions : </span></p>
-            <ul>
-                <li>
-                    Facilitated a detailed market survey to ascertain connections to
-                    ensuring as many consumers as possible have natural gas while
-                    actively engaging with communities to ensure responsible business
-                    practices.
-                </li>
-
-                <li>
-                    Leverage on our government relations expertise to gain
-                    government approvals at speed time.
-                </li>
-
-                <li>
-                    Interface with relevant stakeholders on the usage of natural
-                    gas for electricity generation
-                </li>
-            </ul>
-
-            <h3>Outcomes</h3>
-
-            <ul>
-                <li>Successfully designed a concise blueprint for easy engagement with
-                    communities, leaders and subscribers.</li>
-
-                <li>
-                    Current implementation of strategies leading to 90%+ acceptance
-                </li>
-            </ul>
-
-
-        </div>
-
-        <div>
-            <h2>Zara Concepts</h2>
-
-            <p><span>Context : </span>Zara is a civil mechanical engineering company involved in the construction of
-                natural gas plants across Nigeria</p>
-
-            <p><span>Brief : </span>Develop a gas distribution business plan for the distribution of
-                natural gas within the south-south region.</p>
-
-            <p><span>Solutions : </span></p>
-            <ul>
-                <li>
-                    Facilitated a detailed market survey to ascertain connections to
-                    ensuring as many consumers as possible have natural gas while
-                    actively engaging with communities to ensure responsible business
-                    practices.
-                </li>
-
-                <li>
-                    Leverage on our government relations expertise to gain
-                    government approvals at speed time.
-                </li>
-
-                <li>
-                    Interface with relevant stakeholders on the usage of natural
-                    gas for electricity generation
-                </li>
-            </ul>
-
-            <h3>Outcomes</h3>
-
-            <ul>
-                <li>Successfully designed a concise blueprint for easy engagement with
-                    communities, leaders and subscribers.</li>
-
-                <li>
-                    Current implementation of strategies leading to 90%+ acceptance
-                </li>
-            </ul>
-        </div>
-
-        <div>
-            <h2>NGML</h2>
-
-            <p><span>Context : </span>: With over 44 years ofexperience, NNPChas come a long way
-                as the energy market leader for Africa's largest economy. However,
-                units within the ecosysytem, recognizes the need to have a systems
-                application and programs (SAP) system support to create a better
-                work environment and fully integrate modules for better business
-                management.</p>
-
-            <p><span>Brief : </span>Develop a gas distribution business plan for the distribution of
-                natural gas within the south-south region.</p>
-
-            <p><span>Solutions : </span></p>
-            <ul>
-                <li>
-                    Design, Implement SAP Solution, Facilitate SAP
-                    Trainings and ensure handholding support through physical and
-                    virtual platforms to bride existing knowledge gap.
-                </li>
-
-            </ul>
-
-            <h3>Outcomes</h3>
-
-            <ul>
-                <li>Successfully generated an all-encompassing support system with usage of platform at 89% usage by all
-                    employees.</li>
-
-                <li>
-                    Trained 400+ employees, executives and mid-level on modules and applications.
-                </li>
-            </ul>
-        </div>
-
-        <div>
-            <h2>Nerve Nig.</h2>
-
-            <p><span>Context : </span>: An investment company to which Alvia serves on an
-                advisory role</p>
-
-            <p><span>Brief : </span>Engage and activate potential investment offtakes to
-                subscribe to tailor made investment packages.</p>
-
-            <p><span>Solutions : </span></p>
-            <ul>
-                <li>
-                    Reachedout and engaged firms with needs for
-                    bespoke investment opportunities and built their capacity to
-                    meet their expansion needs–Financial and advisory roles
-                </li>
-
-            </ul>
-
-            <h3>Outcomes</h3>
-
-            <ul>
-                <li>Significant engagement of companies already on the investment</li>
-
-                <li>
-                    platform 95%+onboardingsuccess rate.
-                </li>
-            </ul>
-        </div>
-
-    </section>
-
-    <h2 class="approach">Our Approach</h2>
-
-    <section class="our-approach">
-        <p>
-            We approaches every client’s business as if it were our own. We believe a consulting firm should
-            be more than an advisor. We put ourselves in our clients’ shoes, align our incentives with their
-            objectives, and collaborate to unlock the full potential of their business. This builds deep and
-            enjoyable relationships. The right approach is necessary for the right outcome. NG
-            Hamlinapproaches work by applying its external knowledge to your organization’s internal way
-            of doing work. We know that in order to maximize the potential of success for your company
-            we need to shape our expert advice in a way that applies to your way of doing business. This
-            allows us to create rich relationships with our clients.
-        </p>
-    </section>
-
-    <section class="with-you">
-        <div class="withyouImg"></div>
-
-        <div class="withyouTxt">
-            <h2>Working With You</h2>
-
-            <p> We care for our clients’ business as our business. We think and act like business
-                partners, not academic advisors. We share our clients’ aspirations, work to understand
-                their reality, and align our incentives with their objectives —so they know we’re in this
-                together.</p>
+                <!-- Service 6 -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-blue-200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-globe text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Digital Transformation</h3>
+                    <p class="text-gray-600 mb-6">Leverage technology to transform your business operations and customer
+                        experiences.</p>
+                    <!-- <a href="#" class="text-blue-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a> -->
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer id="address-con">
-        <div class="banner"></div>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="ALVIA Team" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About ALVIA Consulting</h2>
+                    <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+                    <p class="text-gray-600 mb-6 text-lg">Founded in 2008, ALVIA has been at the forefront of business
+                        consulting, helping organizations navigate complex challenges and capitalize on emerging
+                        opportunities.</p>
+                    <p class="text-gray-600 mb-8 text-lg">Our team of seasoned consultants brings together diverse
+                        expertise across industries, enabling us to deliver customized solutions that drive measurable
+                        results.</p>
 
-        <div class="address-box">
-            <span class="span1">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-600">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Proven methodologies backed by data and research
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-600">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Hands-on approach with practical implementation
+                                    support</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-600">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Client-centric focus with long-term partnership
+                                    mindset</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <p>
-                    <i class="fa fa-phone" aria-hidden="true" style="color: #ffffff;"></i> Mobile: <a href="tel:7036177171">07036177171,</a> <a href="tel:9952927770">09952927770</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Client Success Stories</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Hear what our valued clients have to say about their experience working with Alvia Consulting.
                 </p>
+            </div>
 
-                <p><i class="fa fa-envelope" aria-hidden="true" style="color: #ffffff;"></i> Email: <a href="mailto:alviaresourceenterprise@gmail.com">alviaresourceenterprise@gmail.com</a></p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div
+                    class="testimonial-card bg-white p-8 rounded-lg shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Johnson</h4>
+                            <p class="text-blue-500 text-sm">CEO, TechNova Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Alvia's strategic guidance transformed our business operations. Their team identified key
+                        growth areas we had overlooked, resulting in a 40% revenue increase within six months."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
 
-                <p><i class="fa fa-map-marker" aria-hidden="true" style="color: #ffffff;"></i> Address: 11 Mobolaji Sanni Street, Dawaki, Abuja</p>
+                <!-- Testimonial 2 -->
+                <div
+                    class="testimonial-card bg-white p-8 rounded-lg shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Williams</h4>
+                            <p class="text-blue-500 text-sm">Director, GreenEarth Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The operational efficiency audit conducted by Alvia saved us over $250,000 annually. Their
+                        consultants are not just experts but also wonderful to work with."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
 
+                <!-- Testimonial 3 -->
+                <div
+                    class="testimonial-card bg-white p-8 rounded-lg shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">David Chen</h4>
+                            <p class="text-blue-500 text-sm">Founder, UrbanFoods</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Alvia's market expansion strategy was exactly what we needed. They helped us enter three new
+                        international markets with minimal risk and maximum impact."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
 
-            </span>
+            <!-- <div class="text-center mt-12">
+                <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Read More Success Stories
+                </button>
+            </div> -->
+        </div>
+    </section>
 
-            <span class="span2">
-                <p>POWERED BY : <a href="https://freedom-sunday.github.io/techxbox/">TECHXBOX</a></p>
-            </span>
-            <span class="span3">
-                <small>Copyright, 2024</small>
-            </span>
+    <!-- Contacts Section -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Ready to transform your business? Contact our team of experts today.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 text-lg mb-1">Our Headquarters</h3>
+                            <p class="text-gray-600">123 Business Avenue, Suite 500<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 text-lg mb-1">Phone</h3>
+                            <p class="text-gray-600">+1 (212) 555-0100<br>Mon-Fri, 9am-6pm EST</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 text-lg mb-1">Email</h3>
+                            <p class="text-gray-600">info@alviaconsulting.com<br>consulting@alviaconsulting.com</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <h3 class="font-semibold text-gray-800 text-lg mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+                    <form id="clientform" class="space-y-6 contact-form" id="contact-form" onsubmit="sendEmail()">
+                        <div class="relative">
+                            <input type="text" id="name" name="name"
+                                class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                                placeholder=" Full Name">
+                        </div>
+
+                        <div class="relative">
+                            <input type="email" id="email" name="email"
+                                class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                                placeholder=" Email Address">
+
+                        </div>
+
+                        <div class="relative">
+                            <input type="tel" id="phone" name="phone"
+                                class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                                placeholder=" Mobile Number">
+                        </div>
+
+                        <div class="relative">
+                            <select id="service" name="service"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 appearance-none bg-white">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="strategy">Business Strategy</option>
+                                <option value="operations">Operations Consulting</option>
+                                <option value="finance">Financial Advisory</option>
+                                <option value="marketing">Marketing Strategy</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <textarea id="message" rows="4" name="message"
+                                class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500"
+                                placeholder="Message "></textarea>
+                            <label for="message"
+                                class="floating-label absolute left-4 top-3 text-gray-500 pointer-events-none">Your
+                                Message</label>
+                        </div>
+
+                        <!-- <a href=""> -->
+                            <button type="submit" value="Send"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02]">
+                            Send Us a Message
+                        </button>
+                        <!-- </a> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm mb-2">&copy; 2023 ALVIA Consulting. All rights reserved.</p>
+            <!-- <p class="text-sm">Designed<i class="fas fa-heart text-red-500"></i> by Your Name</p> -->
+            <p class="text-sm">Designed by TechxBox</p>
         </div>
     </footer>
 
-    <script src="./alvia.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+                publicKey: "fUFaXbeZKcO3mw1zF",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        //Sends an email using EmailJS.
+        function sendEmail() {
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const serviceId = 'contact_service';
+                const formId = 'contact_form';
+                emailjs.sendForm(serviceId, formId, form)
+                    .then(() => {
+                        console.log('Email sent successfully!');
+                        alert('Thank you for contacting us! We will get back to you soon.');
+                        form.reset(); // Reset the form after successful submission
+                    })
+                    .catch((error) => {
+                        console.error('Error sending email:', error);
+                        alert('Error sending email. Please try again later.');
+
+                    });
+            });
+        }
+
+    </script>
+
 </body>
 
 </html>
